@@ -1,0 +1,14 @@
+C:\Users\PC\Dropbox\Projekte\util\xhunderUtil\obj\Debug\net5.0\XhunderUtil.csproj.AssemblyReference.cache
+C:\Users\PC\Dropbox\Projekte\util\xhunderUtil\obj\Debug\net5.0\XhunderUtil.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\PC\Dropbox\Projekte\util\xhunderUtil\obj\Debug\net5.0\XhunderUtil.AssemblyInfoInputs.cache
+C:\Users\PC\Dropbox\Projekte\util\xhunderUtil\obj\Debug\net5.0\XhunderUtil.AssemblyInfo.cs
+C:\Users\PC\Dropbox\Projekte\util\xhunderUtil\obj\Debug\net5.0\XhunderUtil.csproj.CoreCompileInputs.cache
+C:\Users\PC\Dropbox\Projekte\util\xhunderUtil\bin\Debug\net5.0\XhunderUtil.deps.json
+C:\Users\PC\Dropbox\Projekte\util\xhunderUtil\bin\Debug\net5.0\XhunderUtil.dll
+C:\Users\PC\Dropbox\Projekte\util\xhunderUtil\bin\Debug\net5.0\ref\XhunderUtil.dll
+C:\Users\PC\Dropbox\Projekte\util\xhunderUtil\bin\Debug\net5.0\XhunderUtil.pdb
+C:\Users\PC\Dropbox\Projekte\util\xhunderUtil\obj\Debug\net5.0\XhunderUtil.dll
+C:\Users\PC\Dropbox\Projekte\util\xhunderUtil\obj\Debug\net5.0\ref\XhunderUtil.dll
+C:\Users\PC\Dropbox\Projekte\util\xhunderUtil\obj\Debug\net5.0\XhunderUtil.pdb
+C:\Users\PC\Dropbox\Projekte\util\xhunderUtil\bin\Debug\net5.0\GodotSharp.dll
+C:\Users\PC\Dropbox\Projekte\util\xhunderUtil\obj\Debug\net5.0\XhunderUtil.csproj.CopyComplete
