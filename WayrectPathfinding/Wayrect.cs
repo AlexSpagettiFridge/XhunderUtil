@@ -4,6 +4,9 @@ using Godot;
 
 namespace XhunderUtil.WayrectPathfinding
 {
+    /// <summary>
+    /// Wayrects are rectangles inside of a tilemap used by the WayrectNavigator to calculate paths.
+    /// </summary>
     public class Wayrect
     {
         public IntVector2 start, end;

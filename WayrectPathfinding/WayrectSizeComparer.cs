@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace XhunderUtil.WayrectPathfinding
 {
-    public class WayrectSizeComparer : IComparer<Wayrect>
+    internal class WayrectSizeComparer : IComparer<Wayrect>
     {
         public int Compare(Wayrect x, Wayrect y)
         {

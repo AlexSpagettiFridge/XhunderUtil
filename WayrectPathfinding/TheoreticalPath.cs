@@ -3,7 +3,10 @@ using Godot;
 
 namespace XhunderUtil.WayrectPathfinding
 {
-    public struct TheoreticalPath
+    /// <summary>
+    /// A theoretical path developed by the WayrectNavigator CalculatePath method.
+    /// </summary>
+    internal struct TheoreticalPath
     {
         public float distance;
         public List<Wayrect> wayrects;

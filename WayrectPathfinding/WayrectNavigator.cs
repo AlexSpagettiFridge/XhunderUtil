@@ -4,6 +4,9 @@ using System;
 
 namespace XhunderUtil.WayrectPathfinding
 {
+    /// <summary>
+    /// The main way to interact with the WayrectPathfinding system.
+    /// </summary>
     public class WayrectNavigator
     {
         private List<Wayrect> wayrects = new List<Wayrect>();
@@ -45,7 +48,12 @@ namespace XhunderUtil.WayrectPathfinding
             }
         }
 
-        public Wayrect GetWaypointAtPoint(Vector2 point)
+        /// <summary>
+        /// Returns the way rect at the given <paramref name="point">.
+        /// <param name="point">The point at which a Wayrect should be searched.</param>
+        /// <returns>Returns the Wayrect at the <paramref name="point">. When there isn't one returns null.</returns>
+        /// </summary>
+        public Wayrect GetWayrectAtPoint(Vector2 point)
         {
             point /= gridSize;
             foreach (Wayrect waypoint in wayrects)
@@ -58,10 +66,17 @@ namespace XhunderUtil.WayrectPathfinding
             return null;
         }
 
+        /// <summary>
+        /// Calculates the fastest path from <paramref name="startPoint"> to <paramref name="endPoint">.
+        /// <param name="startPoint">The point the path should start on or the current position of the navigator</param>
+        /// <param name="endpoint">The Goal the path should reach</param>
+        /// <param name="agentWidth">The radius width of the navigator. The path will hold this distance from walls.</param>
+        /// <returns>Returns a path as in a collection of points.</returns>
+        /// </summary>
         public List<Vector2> CalculatePath(Vector2 startPoint, Vector2 endPoint, float agentWidth = 0)
         {
-            Wayrect startRect = GetWaypointAtPoint(startPoint);
-            Wayrect endRect = GetWaypointAtPoint(endPoint);
+            Wayrect startRect = GetWayrectAtPoint(startPoint);
+            Wayrect endRect = GetWayrectAtPoint(endPoint);
             List<Wayrect> visitedWayrects = new List<Wayrect>();
             List<TheoreticalPath> paths = new List<TheoreticalPath>();
             TheoreticalPath? validPath = null;
