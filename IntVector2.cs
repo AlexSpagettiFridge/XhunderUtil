@@ -63,6 +63,7 @@ namespace XhunderUtil
             return hashCode;
         }
 
+        #region Operations
         public static bool operator ==(IntVector2 a, IntVector2 b)
         {
             return (a.x == b.x && a.y == b.y);
@@ -166,5 +167,10 @@ namespace XhunderUtil
             c.y = (int)Math.Round(b * c.y);
             return c;
         }
+
+        public static bool operator <(IntVector2 a, IntVector2 b) => (a.x < b.x || a.y < b.y);
+
+        public static bool operator >(IntVector2 a, IntVector2 b) => (a.x > b.x && a.x > b.y);
+        #endregion
     }
 }
