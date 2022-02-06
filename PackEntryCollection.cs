@@ -2,12 +2,12 @@
 
 namespace XhunderUtil
 {
-    public struct PackEntryCollecion<T>
+    public struct PackEntryCollection<T>
     {
         private Dictionary<string, T> entries;
         public string CurrentPack;
 
-        public PackEntryCollecion(string currentPack = "base") : this()
+        public PackEntryCollection(string currentPack = "base") : this()
         {
             CurrentPack = currentPack;
             entries = new Dictionary<string, T>();
