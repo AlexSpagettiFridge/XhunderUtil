@@ -5,16 +5,13 @@ namespace XhunderUtil
     public struct PackEntryCollection<T>
     {
         private Dictionary<string, T> entries;
-        public string CurrentPack;
-
-        public PackEntryCollection(string currentPack = "base") : this()
-        {
-            CurrentPack = currentPack;
-            entries = new Dictionary<string, T>();
-        }
 
         public void Register(string pack, string subkey, T entry, bool allowOverwrite = true)
         {
+            if (entries == null)
+            {
+                entries = new Dictionary<string, T>();
+            }
             Register(GetCompleteString(pack, subkey), entry, allowOverwrite);
         }
 
