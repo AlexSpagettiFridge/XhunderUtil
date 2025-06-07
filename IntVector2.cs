@@ -5,23 +5,23 @@ namespace XhunderUtil
 {
     public struct IntVector2
     {
-        public int x, y;
+        public int X, Y;
 
-        public int Size => x * y;
+        public int Size => X * Y;
 
         public IntVector2(int x, int y)
         {
-            this.x = x;
-            this.y = y;
+            this.X = x;
+            this.Y = y;
         }
 
         public IntVector2(Vector2 vector)
         {
-            x = (int)Math.Floor(vector.x);
-            y = (int)Math.Floor(vector.x);
+            X = (int)Math.Floor(vector.X);
+            Y = (int)Math.Floor(vector.Y);
         }
 
-        public override string ToString() => "IntVector2(" + x + "," + y + ")";
+        public override string ToString() => "IntVector2(" + X + "," + Y + ")";
 
         public IntVector2[] GetNeighbours(bool diagonal = false)
         {
@@ -51,34 +51,34 @@ namespace XhunderUtil
         public override bool Equals(object obj)
         {
             return obj is IntVector2 vector &&
-                   x == vector.x &&
-                   y == vector.y;
+                   X == vector.X &&
+                   Y == vector.Y;
         }
 
         public override int GetHashCode()
         {
             int hashCode = 1502939027;
-            hashCode = hashCode * -1521134295 + x.GetHashCode();
-            hashCode = hashCode * -1521134295 + y.GetHashCode();
+            hashCode = hashCode * -1521134295 + X.GetHashCode();
+            hashCode = hashCode * -1521134295 + Y.GetHashCode();
             return hashCode;
         }
 
         #region Operations
         public static bool operator ==(IntVector2 a, IntVector2 b)
         {
-            return (a.x == b.x && a.y == b.y);
+            return (a.X == b.X && a.Y == b.Y);
         }
 
         public static bool operator !=(IntVector2 a, IntVector2 b)
         {
-            return (a.x != b.x || a.y != b.y);
+            return (a.X != b.X || a.Y != b.Y);
         }
 
         public static IntVector2 operator +(IntVector2 a, IntVector2 b)
         {
             IntVector2 c = a;
-            c.x += b.x;
-            c.y += b.y;
+            c.X += b.X;
+            c.Y += b.Y;
             return c;
         }
 
@@ -90,8 +90,8 @@ namespace XhunderUtil
         public static IntVector2 operator -(IntVector2 a, IntVector2 b)
         {
             IntVector2 c = a;
-            c.x -= b.x;
-            c.y -= b.y;
+            c.X -= b.X;
+            c.Y -= b.Y;
             return c;
         }
 
@@ -103,8 +103,8 @@ namespace XhunderUtil
         public static IntVector2 operator *(IntVector2 a, IntVector2 b)
         {
             IntVector2 c = a;
-            c.x *= b.x;
-            c.y *= b.y;
+            c.X *= b.X;
+            c.Y *= b.Y;
             return c;
         }
 
@@ -116,8 +116,8 @@ namespace XhunderUtil
         public static IntVector2 operator /(IntVector2 a, IntVector2 b)
         {
             IntVector2 c = a;
-            c.x /= b.x;
-            c.y /= b.y;
+            c.X /= b.X;
+            c.Y /= b.Y;
             return c;
         }
 
@@ -128,7 +128,7 @@ namespace XhunderUtil
 
         public static explicit operator Vector2(IntVector2 a)
         {
-            return new Vector2(a.x, a.y);
+            return new Vector2(a.X, a.Y);
         }
 
         public static explicit operator IntVector2(Vector2 a)
@@ -139,38 +139,38 @@ namespace XhunderUtil
         public static IntVector2 operator *(IntVector2 a, int b)
         {
             IntVector2 c = a;
-            c.x *= b;
-            c.y *= b;
+            c.X *= b;
+            c.Y *= b;
             return c;
         }
 
         public static IntVector2 operator *(IntVector2 a, float b)
         {
             IntVector2 c = a;
-            c.x = (int)Math.Round(b * c.x);
-            c.y = (int)Math.Round(b * c.y);
+            c.X = (int)Math.Round(b * c.X);
+            c.Y = (int)Math.Round(b * c.Y);
             return c;
         }
 
         public static IntVector2 operator /(IntVector2 a, int b)
         {
             IntVector2 c = a;
-            c.x *= b;
-            c.y *= b;
+            c.X *= b;
+            c.Y *= b;
             return c;
         }
 
         public static IntVector2 operator /(IntVector2 a, float b)
         {
             IntVector2 c = a;
-            c.x = (int)Math.Round(b * c.x);
-            c.y = (int)Math.Round(b * c.y);
+            c.X = (int)Math.Round(b * c.X);
+            c.Y = (int)Math.Round(b * c.Y);
             return c;
         }
 
-        public static bool operator <(IntVector2 a, IntVector2 b) => (a.x < b.x || a.y < b.y);
+        public static bool operator <(IntVector2 a, IntVector2 b) => (a.X < b.X || a.Y < b.Y);
 
-        public static bool operator >(IntVector2 a, IntVector2 b) => (a.x > b.x && a.x > b.y);
+        public static bool operator >(IntVector2 a, IntVector2 b) => (a.X > b.X && a.X > b.Y);
         #endregion
     }
 }

@@ -30,19 +30,19 @@ namespace XhunderUtil.WayrectPathfinding
 
         public Vector2 NearestExitToNeighbour(Vector2 entryPoint, Wayrect nb, float agentWidth = 0)
         {
-            if (start.x == nb.end.x || nb.start.x == end.x)
+            if (start.X == nb.end.X || nb.start.X == end.X)
             {
-                int top = Math.Max(start.y, nb.start.y);
-                int bottom = Math.Min(end.y, nb.end.y);
-                int xExit = (start.x > nb.start.x) ? start.x : end.x;
-                return new Vector2(xExit, Mathf.Clamp(entryPoint.y, top + agentWidth, bottom - agentWidth));
+                int top = Math.Max(start.Y, nb.start.Y);
+                int bottom = Math.Min(end.Y, nb.end.Y);
+                int xExit = (start.X > nb.start.X) ? start.X : end.X;
+                return new Vector2(xExit, Mathf.Clamp(entryPoint.Y, top + agentWidth, bottom - agentWidth));
             }
-            if (start.y == nb.end.y || nb.start.y == end.y)
+            if (start.Y == nb.end.Y || nb.start.Y == end.Y)
             {
-                int left = Math.Max(start.x, nb.start.x);
-                int right = Math.Min(end.x, nb.end.x);
-                int yExit = (start.y > nb.start.y) ? start.y : end.y;
-                return new Vector2(Mathf.Clamp(entryPoint.x, left + agentWidth, right - agentWidth), yExit);
+                int left = Math.Max(start.X, nb.start.X);
+                int right = Math.Min(end.X, nb.end.X);
+                int yExit = (start.Y > nb.start.Y) ? start.Y : end.Y;
+                return new Vector2(Mathf.Clamp(entryPoint.X, left + agentWidth, right - agentWidth), yExit);
             }
             throw new Exception($"No connection between {this.ToString()} & {nb.ToString()}");
         }
@@ -63,18 +63,18 @@ namespace XhunderUtil.WayrectPathfinding
             neighbours.Sort(new WayrectSizeComparer());
             foreach (Wayrect neighbour in neighbours)
             {
-                if (neighbour.start.x == start.x && neighbour.end.x == end.x)
+                if (neighbour.start.X == start.X && neighbour.end.X == end.X)
                 {
-                    neighbour.start.y = Math.Min(start.y, neighbour.start.y);
-                    neighbour.end.y = Math.Max(end.y, neighbour.end.y);
+                    neighbour.start.Y = Math.Min(start.Y, neighbour.start.Y);
+                    neighbour.end.Y = Math.Max(end.Y, neighbour.end.Y);
                     Remove();
                     PassOnNeighbours(neighbour);
                     return true;
                 }
-                if (neighbour.start.y == start.y && neighbour.end.y == end.y)
+                if (neighbour.start.Y == start.Y && neighbour.end.Y == end.Y)
                 {
-                    neighbour.start.x = Math.Min(start.x, neighbour.start.x);
-                    neighbour.end.x = Math.Max(end.x, neighbour.end.x);
+                    neighbour.start.X = Math.Min(start.X, neighbour.start.X);
+                    neighbour.end.X = Math.Max(end.X, neighbour.end.X);
                     Remove();
                     PassOnNeighbours(neighbour);
                     return true;
@@ -97,13 +97,13 @@ namespace XhunderUtil.WayrectPathfinding
 
         public bool IsConnected(Wayrect other)
         {
-            if (start.x == other.end.x || end.x == other.start.x)
+            if (start.X == other.end.X || end.X == other.start.X)
             {
-                return !(start.y >= other.end.y || end.y <= other.start.y);
+                return !(start.Y >= other.end.Y || end.Y <= other.start.Y);
             }
-            if (start.y == other.end.y || end.y == other.start.y)
+            if (start.Y == other.end.Y || end.Y == other.start.Y)
             {
-                return !(start.x >= other.end.x || end.x <= other.start.x);
+                return !(start.X >= other.end.X || end.X <= other.start.X);
             }
             return false;
         }

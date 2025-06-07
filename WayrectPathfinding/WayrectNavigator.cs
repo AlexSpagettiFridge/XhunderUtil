@@ -58,7 +58,7 @@ namespace XhunderUtil.WayrectPathfinding
             point /= gridSize;
             foreach (Wayrect waypoint in wayrects)
             {
-                if (point.x > waypoint.start.x && point.x < waypoint.end.x && point.y > waypoint.start.y && point.y < waypoint.end.y)
+                if (point.X > waypoint.start.X && point.X < waypoint.end.X && point.Y > waypoint.start.Y && point.Y < waypoint.end.Y)
                 {
                     return waypoint;
                 }
