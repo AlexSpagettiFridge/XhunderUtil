@@ -10,7 +10,7 @@ namespace XhunderUtil.ByteGrid
     {
         private readonly ByteGrid byteGrid;
         private int x = -1, y = 0;
-        public ByteGridEntry Current => new(byteGrid, x, y, byteGrid[x, y]);
+        public ByteGridEntry Current => new(byteGrid, x, y);
 
         object IEnumerator.Current => Current;
 

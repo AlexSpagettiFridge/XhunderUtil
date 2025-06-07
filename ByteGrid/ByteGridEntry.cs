@@ -20,7 +20,7 @@ namespace XhunderUtil.ByteGrid
         /// <summary>
         /// <see langword="byte">Byte</see> value
         /// </summary>
-        public readonly byte Value;
+        public readonly byte Value => Grid[Position];
 
         /// <summary>
         /// Get Tile Rect in a Tilemap with given <paramref name="size"/>
@@ -39,12 +39,23 @@ namespace XhunderUtil.ByteGrid
         /// </summary>
         public int Y => Position.Y;
 
-        public ByteGridEntry(ByteGrid grid, int x, int y, byte value)
+        public ByteGridEntry(ByteGrid grid, int x, int y)
         {
             Grid = grid;
             Position.X = x;
             Position.Y = y;
-            Value = value;
+        }
+
+        /// <summary>
+        /// Sets value spezified by this class.
+        /// </summary>
+        /// <param name="value"></param> <summary>
+        /// 
+        /// </summary>
+        /// <param name="value"></param>
+        public void SetValue(byte value)
+        {
+            Grid[Position] = value;
         }
     }
 }

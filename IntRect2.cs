@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using Godot;
 
 namespace XhunderUtil
@@ -5,8 +7,9 @@ namespace XhunderUtil
     /// <summary>
     /// Godot <see cref="Rect2"/> but with integers instead of floats. 
     /// </summary>
-    public class IntRect2
+    public class IntRect2 : IEnumerable<IntVector2>
     {
+        #region Variables and Constructors
         public IntVector2 Position, Size;
         public IntVector2 Start
         {
@@ -34,5 +37,18 @@ namespace XhunderUtil
             Position = new IntVector2(floatRect.Position);
             End = new IntVector2(floatRect.End);
         }
+        #endregion
+
+        #region overrides
+        public IEnumerator<IntVector2> GetEnumerator()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
+        #endregion
     }
 }

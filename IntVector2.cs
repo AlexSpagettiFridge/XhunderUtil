@@ -90,6 +90,12 @@ namespace XhunderUtil
         /// <param name="maximum">Other vector to compare with</param>
         /// <returns></returns>
         public readonly IntVector2 Max(IntVector2 maximum) => new(Math.Max(X, maximum.X), Math.Max(Y, maximum.Y));
+
+        /// <summary>
+        /// Calculates the product of both axes.
+        /// </summary>
+        /// <returns></returns>
+        public readonly int Product() => X * Y;
         #endregion
 
         #region Operations
