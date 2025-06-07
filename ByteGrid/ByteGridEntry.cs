@@ -4,7 +4,7 @@ using Godot;
 
 namespace XhunderUtil.ByteGrid
 {
-    internal struct ByteGridEntry
+    public struct ByteGridEntry
     {
         public readonly ByteGrid Grid;
         public readonly int X, Y;
