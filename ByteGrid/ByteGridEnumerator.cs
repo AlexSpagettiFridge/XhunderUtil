@@ -3,6 +3,9 @@ using System.Collections.Generic;
 
 namespace XhunderUtil.ByteGrid
 {
+    /// <summary>
+    /// Enumerator for <see cref="ByteGrid"/>
+    /// </summary>
     internal class ByteGridEnumerator : IEnumerator<ByteGridEntry>
     {
         private readonly ByteGrid byteGrid;
