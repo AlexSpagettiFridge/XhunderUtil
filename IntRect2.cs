@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Godot;
@@ -48,6 +49,32 @@ namespace XhunderUtil
         IEnumerator IEnumerable.GetEnumerator()
         {
             return GetEnumerator();
+        }
+        #endregion
+
+        #region Mathesque Functions
+        public IEnumerable<IntVector2> GetPixelsInsideEllipse()
+        {
+            //Bresenham midpoint circle algorithm modified for ellipses
+            float verticalStretch = Size.Y / Size.X;
+            int xradius = (int)Math.Ceiling(Size.X / 2f);
+            bool odd = xradius != Size.X;
+            bool oddY = Math.Floor(Size.Y / 2f) != Size.Y / 2;
+
+            for (int x = odd ? 0 : 1; x < xradius; x++)
+            {
+                int verticalLength = (int)Math.Round(xradius * verticalStretch - x);
+                for (int y = oddY ? 0 : 1; y < verticalLength; y++)
+                {
+                    yield return new(x, y);
+                    if (y != 0) { yield return new(x, -y); }
+                    if (x != 0)
+                    {
+                        yield return new(-x, y);
+                        if (y != 0) { yield return new(-x, -y); }
+                    }
+                }
+            }
         }
         #endregion
     }
